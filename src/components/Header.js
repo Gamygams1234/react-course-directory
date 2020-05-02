@@ -1,14 +1,19 @@
-import React from 'react';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => (
   <header>
-    <span className="icn-logo"><i className="material-icons">code</i></span>
+    <span className="icn-logo">
+      <i className="material-icons">code</i>
+    </span>
     <ul className="main-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Teachers</a></li>
-      <li><a href="#">Courses</a></li>
-    </ul>    
+      <NavLink exact to="/">
+        Home
+      </NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/teachers">Teachers</NavLink>
+      <NavLink to="/courses">Courses</NavLink>
+    </ul>
   </header>
 );
 
