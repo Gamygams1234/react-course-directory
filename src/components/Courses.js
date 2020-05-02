@@ -2,7 +2,7 @@ import React from "react";
 import CSS from "./courses/CSS";
 import HTML from "./courses/HTML";
 import JavaScript from "./courses/JavaScript";
-import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
+import { Route, Redirect, NavLink } from "react-router-dom";
 
 const Courses = () => (
   <div className="main-content courses">
@@ -20,7 +20,9 @@ const Courses = () => (
         </li>
       </ul>
     </div>
+    {/* This will set the default to the HTML */}
 
+    <Route exact path="/courses" render={() => <Redirect to="/courses/html" />} />
     <Route path="/courses/html" component={HTML} />
     <Route path="/courses/javascript" component={JavaScript} />
     <Route path="/courses/css" component={CSS} />
