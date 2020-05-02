@@ -17,7 +17,7 @@ const App = () => (
         {/* we can use the render method to pass on props to the page */}
         <Route path="/about" render={() => <About title="About" />} />
         <Route exact path="/teachers" component={Teachers} />
-        <Route path="/teachers/:topic/:fname-:lname" component={Featured}></Route>
+        <Route path="/teachers/:topic/:name" component={Featured}></Route>
         <Route path="/courses" component={Courses} />
         <Route component={NotFound} />
       </Switch>
