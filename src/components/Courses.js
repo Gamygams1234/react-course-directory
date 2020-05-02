@@ -1,7 +1,7 @@
 import React from "react";
-import CSS from "./courses/CSS";
-import HTML from "./courses/HTML";
-import JavaScript from "./courses/JavaScript";
+import { HTMLCourses, CSSCourses, JSCourses } from "../data/courses";
+import CourseContainer from "./courses/CourseContainer";
+
 import { Route, Redirect, NavLink } from "react-router-dom";
 
 const Courses = ({ match }) => (
@@ -20,12 +20,12 @@ const Courses = ({ match }) => (
         </li>
       </ul>
     </div>
-    {/* This will set the default to the HTML */}
+    {/* We set tis so that our path will aways match */}
 
     <Route exact path={match.path} render={() => <Redirect to={`${match.path}/html`} />} />
-    <Route path={`${match.path}/html`} component={HTML} />
-    <Route path={`${match.path}/javascript`} component={JavaScript} />
-    <Route path={`${match.path}/css`} component={CSS} />
+    <Route path={`${match.path}/html`} render={() => <CourseContainer data={HTMLCourses} />} />
+    <Route path={`${match.path}/javascript`} render={() => <CourseContainer data={CSSCourses} />} />
+    <Route path={`${match.path}/css`} render={() => <CourseContainer data={JSCourses} />} />
 
     {/* Write routes here... */}
   </div>
